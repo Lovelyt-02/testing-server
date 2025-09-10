@@ -1,0 +1,39 @@
+const mongoose = require('mongoose');
+const micaPageSchema=new mongoose.Schema({
+    bannerSection:{
+        title:String,
+        description:String,
+        backgroundImageUrl:String,
+    },
+    sectionOne:{
+        image:String,
+        title:String,
+        description:String,
+    },
+    sectionTwo:{
+        title:String,
+        description:String,
+        pointsTitle:String,
+        points:[
+            {
+                point:String
+            }  
+        ]
+    },
+
+    sectionThree:{
+        title:String,
+        description:String,
+        subProducts:[
+            {
+                title:String,
+                image:String,
+            }
+        ]
+    },
+    sectionFour:{
+        videoThumbnail:String,
+        videoUrl:String,
+    }
+});
+module.exports=mongoose.model('MicaPage',micaPageSchema);
